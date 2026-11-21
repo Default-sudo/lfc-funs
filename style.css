@@ -1,0 +1,220 @@
+:root {
+  --lfc-red: #c8102e;
+  --lfc-dark-red: #8b0016;
+  --lfc-gold: #f6eb61;
+  --lfc-teal: #00b2a9;
+  --bg-dark: #0f1115;
+  --bg-card: #181b22;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: #2a2f3a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.container { max-width: 1050px; margin: 0 auto; padding: 0 1.25rem; }
+
+/* Navbar */
+.navbar {
+  background-color: var(--lfc-red);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+.logo ion-icon { color: var(--lfc-gold); font-size: 1.5rem; }
+.nav-links { display: flex; list-style: none; gap: 1.5rem; }
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.nav-links a:hover { color: var(--lfc-gold); }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, var(--lfc-dark-red) 0%, #1a0508 100%);
+  padding: 5rem 0;
+  text-align: center;
+  border-bottom: 3px solid var(--lfc-gold);
+}
+.badge {
+  display: inline-block;
+  background: rgba(246, 235, 97, 0.15);
+  color: var(--lfc-gold);
+  border: 1px solid var(--lfc-gold);
+  padding: 0.25rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.hero h1 { font-size: 2.75rem; font-weight: 900; letter-spacing: 1px; margin-bottom: 1rem; }
+.hero p { max-width: 620px; margin: 0 auto 2rem; color: #e2e8f0; font-size: 1.1rem; }
+.hero-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+.btn:active { transform: scale(0.97); }
+.btn-primary { background: var(--lfc-red); color: #fff; }
+.btn-primary:hover { background: #a80d26; }
+.btn-outline { border-color: var(--lfc-gold); color: var(--lfc-gold); background: transparent; }
+.btn-outline:hover { background: var(--lfc-gold); color: #111; }
+
+/* Sections */
+.section { padding: 4rem 0; }
+.alt-bg { background-color: #13161c; }
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+h2 ion-icon { color: var(--lfc-red); }
+.section-sub { color: var(--text-muted); margin-top: -1rem; margin-bottom: 1.5rem; }
+
+/* Trophy Grid */
+.trophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.25rem;
+}
+.trophy-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--lfc-gold);
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+}
+.trophy-count { font-size: 2.75rem; font-weight: 900; color: var(--lfc-gold); display: block; }
+.trophy-card h3 { margin: 0.25rem 0 0.5rem; }
+.trophy-card p { color: var(--text-muted); font-size: 0.9rem; }
+
+/* Squad Section */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.section-header h2 { margin-bottom: 0; }
+.filter-bar { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.filter-btn {
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 0.45rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.filter-btn.active, .filter-btn:hover {
+  background: var(--lfc-red);
+  color: #fff;
+  border-color: var(--lfc-red);
+}
+
+.squad-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.player-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--lfc-red);
+  border-radius: 8px;
+  padding: 1.15rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.player-info h3 { font-size: 1.05rem; margin-bottom: 0.2rem; }
+.player-info span { font-size: 0.85rem; color: var(--text-muted); }
+.jersey-num {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.15);
+}
+
+/* Fan Wall */
+.fan-form {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.fan-form input {
+  flex: 1;
+  min-width: 220px;
+  padding: 0.75rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+}
+.fan-form input:focus { outline: 2px solid var(--lfc-red); border-color: transparent; }
+
+.fan-posts { display: grid; gap: 1rem; }
+.post-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+}
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--lfc-gold);
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}

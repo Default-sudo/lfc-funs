@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Kop Hub — Liverpool FC Fan Zone</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="https://unpkg.com"></script>
+  <script nomodule src="https://unpkg.com"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a href="#" class="logo">
+        <ion-icon name="flame"></ion-icon>
+        <span>THE KOP HUB</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#squad">26/27 Squad</a></li>
+        <li><a href="#honours">Trophy Wall</a></li>
+        <li><a href="#fanzone">Fan Wall</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <header class="hero">
+    <div class="container">
+      <span class="badge">ANFIELD • EST. 1892</span>
+      <h1>YOU'LL NEVER WALK ALONE</h1>
+      <p>The unofficial home for Reds supporters worldwide. Track the 2026–27 squad under head coach Andoni Iraola, explore our 20 league titles, and join the matchday conversation.</p>
+      <div class="hero-actions">
+        <a href="#squad" class="btn btn-primary">Explore Squad</a>
+        <a href="#fanzone" class="btn btn-outline">Sign Fan Wall</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Trophy Wall -->
+  <section id="honours" class="section">
+    <div class="container">
+      <h2><ion-icon name="trophy-outline"></ion-icon> Champions Wall</h2>
+      <div class="trophy-grid">
+        <article class="trophy-card">
+          <span class="trophy-count">20</span>
+          <h3>League Titles</h3>
+          <p>Joint-most in English top-flight history (latest 2024–25)</p>
+        </article>
+        <article class="trophy-card">
+          <span class="trophy-count">6</span>
+          <h3>European Cups</h3>
+          <p>1977, 1978, 1981, 1984, 2005, 2019</p>
+        </article>
+        <article class="trophy-card">
+          <span class="trophy-count">8</span>
+          <h3>FA Cups</h3>
+          <p>Historic domestic cup triumphs from 1965 to 2022</p>
+        </article>
+        <article class="trophy-card">
+          <span class="trophy-count">10</span>
+          <h3>League Cups</h3>
+          <p>English record holders (latest 2023–24)</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive 2026-27 Squad Filter -->
+  <section id="squad" class="section alt-bg">
+    <div class="container">
+      <div class="section-header">
+        <h2><ion-icon name="people-outline"></ion-icon> 2026–27 First-Team Squad</h2>
+        <div class="filter-bar">
+          <button class="filter-btn active" data-role="all">All</button>
+          <button class="filter-btn" data-role="GK">Goalkeepers</button>
+          <button class="filter-btn" data-role="DEF">Defenders</button>
+          <button class="filter-btn" data-role="MID">Midfielders</button>
+          <button class="filter-btn" data-role="FWD">Forwards</button>
+        </div>
+      </div>
+      <div id="squad-grid" class="squad-grid"></div>
+    </div>
+  </section>
+
+  <!-- Interactive Fan Chant & Message Wall -->
+  <section id="fanzone" class="section">
+    <div class="container">
+      <h2><ion-icon name="megaphone-outline"></ion-icon> Kopite Fan Wall</h2>
+      <p class="section-sub">Leave your matchday prediction or favorite Anfield chant.</p>
+
+      <form id="fan-form" class="fan-form">
+        <input type="text" id="fan-name" placeholder="Your Name / City (e.g., Sam from Liverpool)" required maxlength="40" />
+        <input type="text" id="fan-msg" placeholder="Write your message... YNWA!" required maxlength="160" />
+        <button type="submit" class="btn btn-primary">Post Chant</button>
+      </form>
+
+      <div id="fan-posts" class="fan-posts"></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>Built for Liverpool FC Supporters • Walk On, With Hope In Your Heart</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
